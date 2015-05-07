@@ -1,4 +1,5 @@
-#Intro to R
+#Introduction to R
+---------------------------------------------------------------------
 ```
 source("http://www.openintro.org/stat/data/present.R")
 ```
