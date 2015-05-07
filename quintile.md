@@ -1,10 +1,13 @@
+#QUANTILING
 -----------------------------------------------
-sample <- read.delim('D:\\Roshni sacks adhoc\\Prescriber Info Sample.csv',sep =',',header = T)
-
-#SORTING OF THE TABLE
-#Quantiling
 ```
-sample<-sample[order(sample$TRX,na.last = T,decreasing = T),]
+sample <- read.delim('D:\\Sample.csv',sep =',',header = T)
+```
+
+###SORTING OF THE TABLE
+
+```
+sample<-sample[order(sample$X,na.last = T,decreasing = T),]
 ```
 ###ROW NUMBER
 ```
@@ -12,12 +15,12 @@ sample$row <- 1:nrow(sample)
 ```
 ###CUMMULATIVE SUM
 ```
-sample$cumsum<-cumsum(sample$TRX)
+sample$cumsum<-cumsum(sample$X)
 ```
 ###TOTAL_SUM
 ```
-a<-sum(sample$TRX)/4
-b<-sum(sample$TRX)
+a<-sum(sample$X)/4
+b<-sum(sample$X)
 ```
 ###ASSIGNING VECTOR
 ```
@@ -34,5 +37,5 @@ sample$Quartile<-as.character(sample$Quartile)
 ###QUALITY CHECK
 ```
 t<-as.data.frame(table(sample$Quartile))
-s<-as.data.frame(tapply(sample$TRX,sample$Quartile,sum))
+s<-as.data.frame(tapply(sample$X,sample$Quartile,sum))
 ```
